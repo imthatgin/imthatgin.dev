@@ -1,0 +1,51 @@
+{
+    "policies": {
+        "DisableFirefoxAccounts": true,
+        "DisableFeedbackCommands": true,
+        "DisablePocket": true,
+        "DisableFirefoxStudies": true,
+        "DisableTelemetry": true,
+        "DontCheckDefaultBrowser": true,
+        "FirefoxHome": {
+            "SponsoredStories": false,
+            "SponsoredTopSites": false,
+            "Stories": false
+        },
+        "FirefoxSuggest": {
+            "WebSuggestions": false,
+            "SponsoredSuggestions": false,
+            "ImproveSuggest": false,
+            "Locked": true
+        },
+        "GenerativeAI": {
+            "Enabled": false
+        },
+        "NoDefaultBookmarks": true,
+        "SearchSuggestEnabled": false,
+        "SearchEngines": {
+            "Remove": [
+                "Perplexity",
+                "Bing"
+            ]
+        },
+        "SkipTermsOfUse": true,
+        "UserMessaging": {
+            "ExtensionRecommendations": false,
+            "FeatureRecommendations": false,
+            "UrlbarInterventions": false,
+            "SkipOnboarding": true,
+            "MoreFromMozilla": false,
+            "FirefoxLabs": false
+        },
+        "Preferences": {
+            "accessibility.force_disabled": {
+                "Value": 1,
+                "Status": "default",
+                "Type": "number"
+            },
+            "browser.compactmode.show": {
+                "Value": true
+            }
+        }
+    }
+}

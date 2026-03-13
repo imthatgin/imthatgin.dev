@@ -1,0 +1,12 @@
+---
+- name: Create firefox policy folder'
+  become: yes
+  ansible.builtin.file:
+    path: "/etc/firefox/policies"
+    state: directory
+
+- name: Set firefox policy file
+  become: yes
+  ansible.builtin.copy:
+    src: policies.json
+    dest: "/etc/firefox/policies/policies.json"
