@@ -1,5 +1,6 @@
 ---
 - name: Install NPM
+  become: yes
   ansible.builtin.package:
     name: npm
     state: present
