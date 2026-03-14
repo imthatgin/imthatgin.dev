@@ -1,0 +1,42 @@
+---
+- name: Install Github Desktop (Debian)
+  when: ansible_os_family == "Debian"
+  become: yes
+  block:
+    - name: Add github repository for debian based systems
+      ansible.builtin.deb822_repository:
+        name: mwt-packages
+        types: deb
+        uris: https://apt.packages.shiftkey.dev/ubuntu
+        suites: [any, main]
+        components:
+          - "github-desktop"
+        architectures: amd64
+        signed_by: https://mirror.mwt.me/shiftkey-desktop/gpgkey
+        enabled: true
+
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+- name: Install Github Desktop (Fedora)
+  when: ansible_os_family == "RedHat"
+  become: yes
+  block:
+    - name: Add custom EPEL repository
+      ansible.builtin.yum_repository:
+        name: mwt-packages
+        description: Github Desktop Linux
+        baseurl: https://mirror.mwt.me/shiftkey-desktop/rpm
+        gpgcheck: yes
+        gpgkey: https://mirror.mwt.me/shiftkey-desktop/gpgkey
+        enabled: yes
+
+    - name: Update dnf cache
+      ansible.builtin.dnf:
+        update_cache: yes
+
+- name: Install Github Desktop
+  ansible.builtin.package:
+    name: github-desktop
+    state: present
