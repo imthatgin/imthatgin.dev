@@ -37,6 +37,7 @@
         update_cache: yes
 
 - name: Install Github Desktop
+  become: yes
   ansible.builtin.package:
     name: github-desktop
     state: present
