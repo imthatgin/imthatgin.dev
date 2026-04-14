@@ -1,9 +1,0 @@
----
-- name: Ensure Bun is installed
-  ansible.builtin.include_role:
-    name: bun
-
-- name: Install OhMyPi agent
-  community.general.npm:
-    name: "@oh-my-pi/pi-coding-agent"
-    global: true

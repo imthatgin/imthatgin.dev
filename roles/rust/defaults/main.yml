@@ -1,0 +1,2 @@
+---
+rust_packages: ["rustup", "gcc", "clang"]

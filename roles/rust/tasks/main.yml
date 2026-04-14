@@ -1,0 +1,7 @@
+---
+- name: Install Rust Development Packages
+  become: yes
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ rust_packages }}"
