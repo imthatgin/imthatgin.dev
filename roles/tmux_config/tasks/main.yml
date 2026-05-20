@@ -1,0 +1,6 @@
+---
+- name: Set tmux config
+  ansible.builtin.copy:
+    src: tmux.conf
+    dest: ~/tmux.conf
+    mode: "0644"

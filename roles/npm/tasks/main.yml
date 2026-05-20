@@ -4,3 +4,10 @@
   ansible.builtin.package:
     name: npm
     state: present
+
+- name: Set firefox policy file
+  ansible.builtin.lineinfile:
+    path: "~/.npmrc"
+    line: 'min-release-age=7'
+    create: true
+    state: present
